@@ -25,7 +25,8 @@ public class Sota implements AdifEnumCode {
     public static Sota valueOf(String s) {
         Matcher m = SOTA_RE.matcher(s);
         if (m.matches()) {
-            return new Sota(m.group(0), m.group(1), Integer.parseInt(m.group(2)));
+            return new Sota(s);
+            //return new Sota(m.group(0), m.group(1), Integer.parseInt(m.group(2)));
         } else {
             throw new IllegalArgumentException("This is not a SOTA reference");
         }
